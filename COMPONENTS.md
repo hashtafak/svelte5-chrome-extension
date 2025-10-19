@@ -1,8 +1,8 @@
-# SPEAK Extension - Component System Documentation
+# Svelte 5 Chrome Extension - Component System Documentation
 
 ## Overview
 
-Complete icon and component system built for the SPEAK Chrome extension using Svelte 5, Lucide icons, and DaisyUI.
+Complete icon and component system built for Chrome extensions using Svelte 5, Lucide icons, and DaisyUI.
 
 ## ✅ What's Been Implemented
 
@@ -15,6 +15,7 @@ Complete icon and component system built for the SPEAK Chrome extension using Sv
 - **Showcase** (`/components/IconShowcase.svelte`): Visual reference for all icons
 
 **Features**:
+
 - ✅ Chrome CSP compliant
 - ✅ Tree-shakeable imports
 - ✅ Full TypeScript support
@@ -22,6 +23,7 @@ Complete icon and component system built for the SPEAK Chrome extension using Sv
 - ✅ Customizable size, stroke width, and styling
 
 **Usage**:
+
 ```svelte
 import { Home } from '$lib/icons';
 <Home size={24} />
@@ -36,12 +38,14 @@ import { Home } from '$lib/icons';
 - Console logging for debugging
 
 **Pages**:
+
 - `home` - Main landing page with stats and features
 - `settings` - User preferences and configuration
 - `help` - FAQ and support contact form
 - `components` - Component library showcase
 
 **Navigation Features**:
+
 - ✅ Reactive routing with Svelte stores
 - ✅ Active state highlighting in dock
 - ✅ Click-to-navigate from any page
@@ -54,6 +58,7 @@ import { Home } from '$lib/icons';
 All components are built on DaisyUI with Svelte 5 patterns.
 
 #### Button (`Button.svelte`)
+
 ```svelte
 <Button variant="primary" size="lg" onclick={handler}>
   Click Me
@@ -63,6 +68,7 @@ All components are built on DaisyUI with Svelte 5 patterns.
 **Props**: variant, size, outline, wide, block, circle, square, loading, disabled
 
 #### Card (`Card.svelte`)
+
 ```svelte
 <Card title="My Card">
   {#snippet children()}
@@ -77,9 +83,10 @@ All components are built on DaisyUI with Svelte 5 patterns.
 **Props**: title, compact, bordered, imageFull
 
 #### Input (`Input.svelte`)
+
 ```svelte
-<Input 
-  type="email" 
+<Input
+  type="email"
   bind:value={email}
   placeholder="Enter email"
   primary
@@ -89,6 +96,7 @@ All components are built on DaisyUI with Svelte 5 patterns.
 **Props**: type, value, placeholder, size, bordered, ghost, primary, secondary, accent, info, success, warning, error, disabled
 
 #### Modal (`Modal.svelte`)
+
 ```svelte
 <Modal bind:open={showModal} title="Dialog">
   {#snippet children()}
@@ -103,6 +111,7 @@ All components are built on DaisyUI with Svelte 5 patterns.
 **Props**: open (bindable), title, onclose
 
 #### Badge (`Badge.svelte`)
+
 ```svelte
 <Badge variant="success" size="sm">Active</Badge>
 ```
@@ -110,6 +119,7 @@ All components are built on DaisyUI with Svelte 5 patterns.
 **Props**: variant, size, outline
 
 #### Alert (`Alert.svelte`)
+
 ```svelte
 <Alert variant="success">
   {#snippet children()}
@@ -125,6 +135,7 @@ All components are built on DaisyUI with Svelte 5 patterns.
 **Location**: `/src/lib/pages/`
 
 #### HomePage.svelte
+
 - Hero card with gradient background
 - Live stats display
 - Interactive counter demo
@@ -132,6 +143,7 @@ All components are built on DaisyUI with Svelte 5 patterns.
 - Link to components demo
 
 #### SettingsPage.svelte
+
 - Theme toggle with visual feedback
 - Notification preferences
 - Form controls with proper labeling
@@ -140,6 +152,7 @@ All components are built on DaisyUI with Svelte 5 patterns.
 - Action buttons for data management
 
 #### HelpPage.svelte
+
 - Quick links to resources
 - FAQ accordion
 - Contact form with validation-ready inputs
@@ -147,6 +160,7 @@ All components are built on DaisyUI with Svelte 5 patterns.
 - Keyboard shortcuts reference
 
 #### ComponentsDemo.svelte
+
 - Complete showcase of all UI components
 - Multiple variants and states
 - Interactive examples
@@ -155,6 +169,7 @@ All components are built on DaisyUI with Svelte 5 patterns.
 ### 5. Updated Components
 
 #### Nav.svelte
+
 - ✅ Active state highlighting
 - ✅ Lucide icons instead of emojis
 - ✅ Proper accessibility (ARIA labels, sr-only text)
@@ -162,6 +177,7 @@ All components are built on DaisyUI with Svelte 5 patterns.
 - ✅ Click handlers working correctly
 
 #### ThemeToggle.svelte
+
 - ✅ Replaced inline SVG with Lucide Moon/Sun icons
 - ✅ Cleaner, more maintainable code
 - ✅ Consistent with design system
@@ -208,19 +224,23 @@ src/
 ## How It Works
 
 ### Navigation Flow
+
 1. User clicks dock icon (Home, Settings, Help)
 2. `navigateTo()` updates `currentPage` store
 3. App.svelte reactively renders the correct page
 4. Nav component shows active state for current page
 
 ### Icon System
+
 1. Icons are imported from Lucide in `/lib/icons/index.ts`
 2. Components import from the registry
 3. Icons render as inline SVG (CSP-safe)
 4. Theme colors work via `currentColor`
 
 ### Component Pattern
+
 All UI components follow this pattern:
+
 - Type-safe props using Svelte 5 `$props()`
 - Bindable values using `$state()` and `$bindable()`
 - Snippet-based slots for flexible content
@@ -230,6 +250,7 @@ All UI components follow this pattern:
 ## Testing
 
 ### Test Navigation
+
 1. Open extension in browser
 2. Click Home icon → should show stats and counter
 3. Click Settings icon → should show preferences
@@ -237,6 +258,7 @@ All UI components follow this pattern:
 5. Active page should be highlighted in dock
 
 ### Test Components
+
 1. Navigate to Home page
 2. Click "View Demo →" button
 3. Explore all component variants
