@@ -1,9 +1,9 @@
 import { writable, get } from 'svelte/store';
 
 // DaisyUI theme options
-export type Theme = 
-  | 'light' 
-  | 'dark' 
+export type Theme =
+  | 'light'
+  | 'dark'
   | 'cupcake'
   | 'bumblebee'
   | 'emerald'
@@ -70,14 +70,14 @@ export const AVAILABLE_THEMES: Theme[] = [
   'sunset',
 ];
 
-const STORAGE_KEY = 'speak-extension-theme';
+const STORAGE_KEY = 'svelte5-extension-theme';
 
 // Initialize from localStorage or default to 'light'
 const storedTheme = (localStorage.getItem(STORAGE_KEY) as Theme) || 'light';
 export const theme = writable<Theme>(storedTheme);
 
 // Subscribe to save theme changes to localStorage
-theme.subscribe(value => {
+theme.subscribe((value) => {
   if (typeof localStorage !== 'undefined') {
     localStorage.setItem(STORAGE_KEY, value);
   }
@@ -100,7 +100,7 @@ export function setTheme(newTheme: Theme): void {
 }
 
 export function toggleTheme(): void {
-  theme.update(current => {
+  theme.update((current) => {
     const newTheme: Theme = current === 'light' ? 'dark' : 'light';
     const root = document.querySelector('div[data-theme]');
     if (root) {
