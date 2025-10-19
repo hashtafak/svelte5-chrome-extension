@@ -1,5 +1,7 @@
+import type { Component } from 'svelte';
+
 export interface MenuItem {
-  icon: string;
+  icon: Component<any>;
   label: string;
   action?: () => void;
 }

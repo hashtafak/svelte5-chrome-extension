@@ -1,24 +1,45 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { theme, initializeTheme } from './lib/stores/theme';
+  import { currentPage } from './lib/stores/navigation';
 
-  import ThemeToggle from './lib/components/ThemeToggle.svelte';
+  import ThemeController from './lib/components/ThemeController.svelte';
   import Nav from './lib/components/Nav.svelte';
-  import MainContent from './lib/components/MainContent.svelte';
+
+  // Pages
+  import HomePage from './lib/pages/HomePage.svelte';
+  import SettingsPage from './lib/pages/SettingsPage.svelte';
+  import HelpPage from './lib/pages/HelpPage.svelte';
+  import ComponentsDemo from './lib/pages/ComponentsDemo.svelte';
 
   onMount(() => {
     initializeTheme();
   });
 </script>
 
-<div class="h-screen bg-base-100" data-theme={$theme}>
-  <div class="flex h-full">
-    <main class="flex-1 p-4">
+<div class="h-screen bg-base-300" data-theme={$theme}>
+  <div class="flex flex-col h-full">
+    <main class="flex-1 p-4 pb-20 overflow-y-auto">
+      <!-- Theme Switcher -->
       <div class="flex justify-end mb-4">
-        <ThemeToggle />
+        <ThemeController />
       </div>
-      <MainContent />
+
+      <!-- Page Content -->
+      <div class="max-w-4xl mx-auto">
+        {#if $currentPage === 'home'}
+          <HomePage />
+        {:else if $currentPage === 'settings'}
+          <SettingsPage />
+        {:else if $currentPage === 'help'}
+          <HelpPage />
+        {:else if $currentPage === 'components'}
+          <ComponentsDemo />
+        {/if}
+      </div>
     </main>
+
+    <!-- Navigation -->
     <Nav />
   </div>
 </div>

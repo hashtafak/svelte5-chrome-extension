@@ -179,7 +179,43 @@ module.exports = {
 
 - **`npm run dev`**: Start the development server with HMR.
 - **`npm run build`**: Build the extension for production.
-- **`npm run preview`**: Preview the built extension locally.
+## 📜 Alternative Scripts
+
+If you don't have `just` installed, you can use the shell scripts in the `scripts/` directory:
+
+```bash
+# Install dependencies
+./scripts/install.sh
+
+# Start development server
+./scripts/dev.sh
+
+# Build for production
+./scripts/build.sh
+
+# Clean build artifacts
+./scripts/clean.sh
+
+# Show project status
+./scripts/status.sh
+
+# Prepare for Chrome Web Store
+./scripts/prepare-publish.sh
+
+# Quick test (rebuild + open Chrome)
+./scripts/test.sh
+
+# Show all available scripts
+./scripts/help.sh
+```
+
+All scripts include:
+- ✅ Colored output with status messages
+- ✅ Error handling and validation
+- ✅ Help text and usage instructions
+- ✅ Consistent behavior across platforms
+
+**Note**: Scripts require `chmod +x scripts/*.sh` to be executable.
 
 ---
 
@@ -233,6 +269,24 @@ If you encounter any issues or bugs, please file an issue in the [GitHub reposit
 
 ---
 
+## ☕ Support
+
+If you find this project helpful, consider buying me a coffee!
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/trentbrew)
+
+[Support on Ko-fi](https://ko-fi.com/trentbrew) ❤️
+
+---
+
 ## 📜 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE.md).
+
+---
+
+## 👨‍💻 Author
+
+**Trent Brew**
+- Ko-fi: [ko-fi.com/trentbrew](https://ko-fi.com/trentbrew)
+- GitHub: [@trentbrew](https://github.com/trentbrew)
