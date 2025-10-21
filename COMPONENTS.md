@@ -166,7 +166,26 @@ All components are built on DaisyUI with Svelte 5 patterns.
 - Interactive examples
 - Combined usage example
 
-### 5. Updated Components
+### 5. Footer Component
+
+**Location**: `/src/lib/components/Footer.svelte`
+
+- **Footer.svelte**: Attribution and support footer
+- Displays author credit with animated heart icon
+- Copyright notice with current year
+- MIT license information
+- Optional Ko-fi support link (currently commented out)
+- Theme-compatible design
+
+**Features**:
+
+- ✅ Dynamic year calculation
+- ✅ Animated heart icon
+- ✅ Clean, minimal design
+- ✅ Works with all themes
+- ✅ Optional support integration
+
+### 6. Updated Components
 
 #### Nav.svelte
 
@@ -201,6 +220,7 @@ src/
 │   │   ├── IconShowcase.svelte
 │   │   ├── Nav.svelte
 │   │   ├── ThemeToggle.svelte
+│   │   ├── Footer.svelte
 │   │   └── MainContent.svelte (legacy)
 │   ├── constants/
 │   │   └── menu.ts
