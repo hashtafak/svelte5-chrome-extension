@@ -123,8 +123,10 @@ src/
 │   │   ├── ui/           # Reusable components
 │   │   ├── Icon.svelte
 │   │   ├── Nav.svelte
-│   │   ├── ThemeController.svelte  # NEW!
-│   │   └── ThemeToggle.svelte (legacy)
+│   │   ├── ThemeController.svelte
+│   │   ├── ThemeToggle.svelte (legacy)
+│   │   ├── Footer.svelte
+│   │   └── MainContent.svelte (legacy)
 │   ├── pages/
 │   │   ├── HomePage.svelte
 │   │   ├── ComponentsDemo.svelte
@@ -132,13 +134,21 @@ src/
 │   │   └── HelpPage.svelte
 │   ├── stores/
 │   │   ├── navigation.ts
-│   │   └── theme.ts      # Enhanced with 33 themes
+│   │   └── theme.ts      # 33 themes with persistence
 │   ├── constants/
-│   │   └── menu.ts       # Updated with 4 items
-│   └── icons/
-│       └── index.ts      # Icon registry
+│   │   └── menu.ts       # Navigation menu items
+│   ├── icons/
+│   │   └── index.ts      # Lucide icon registry
+│   ├── types/
+│   │   └── index.ts      # TypeScript type definitions
+│   └── createApp.ts      # App mounting utility
 ├── App.svelte
-└── main.ts
+├── main.ts
+└── app.css
+public/
+├── manifest.json        # Chrome extension manifest (V3)
+├── index.html          # Side panel entry point
+└── icons/              # Extension icons
 ```
 
 ## 🚀 Next Steps (Suggestions)
@@ -178,6 +188,8 @@ src/
 - ✅ 33 themes with controller
 - ✅ Advanced dialog examples
 - ✅ Component library complete
+- ✅ Footer component with attribution
+- ✅ Chrome side panel extension
 - ✅ Beautiful, responsive UI
 - ✅ Accessibility compliant
 - ✅ Type-safe codebase
@@ -229,34 +241,22 @@ setTheme('synthwave');
 initializeTheme();
 ```
 
-### **7. Shell Scripts**
+### **7. Chrome Side Panel Extension**
 
-- **`/scripts/` directory** with executable shell scripts
-- **Mirrors justfile recipes** for people without `just` installed
-- **9 scripts available**:
-  - `install.sh` - Install dependencies
-  - `dev.sh` - Start development server
-  - `build.sh` - Build for production
-  - `build-check.sh` - Build with type checking
-  - `clean.sh` - Clean build artifacts
-  - `status.sh` - Show project status
-  - `test.sh` - Quick test (rebuild + open Chrome)
-  - `prepare-publish.sh` - Prepare for Chrome Web Store
-  - `validate.sh` - Validate manifest.json
-- **Colored output** with status messages
-- **Error handling** and validation
-- **Help system** with `./scripts/help.sh`
+- **Side Panel Interface**: Uses Chrome's side panel API instead of popup
+- **Manifest V3**: Modern Chrome extension format
+- **Single HTML Entry**: `index.html` serves as the side panel content
+- **SidePanel Permission**: Required for side panel functionality
 
-**Usage:**
+**Features**:
 
-```bash
-./scripts/build.sh
-./scripts/status.sh
-./scripts/prepare-publish.sh
-```
+- ✅ Side panel opens alongside web pages
+- ✅ Full-screen capable interface
+- ✅ Integrated with Chrome's UI
+- ✅ No popup window needed
 
 ---
 
-**Version**: 1.0.0
-**Last Updated**: Oct 18, 2025
+**Version**: 1.0.1
+**Last Updated**: Oct 21, 2025
 **Status**: Production Ready ✨
