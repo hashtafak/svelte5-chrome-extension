@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1] - 2025-10-21
+
+### Added
+
+#### Documentation Updates
+
+- **Footer Component Documentation**: Added comprehensive documentation for the Footer.svelte component in COMPONENTS.md
+- **Side Panel Extension Clarification**: Updated FEATURES.md to correctly describe the extension as a Chrome side panel (not popup-based)
+- **Project Structure Updates**: Updated project structure diagrams to reflect actual codebase organization
+- **Component Inventory**: Added missing Footer.svelte to component listings and structure diagrams
+
+### Fixed
+
+- **FEATURES.md Corrections**: Removed references to non-existent shell scripts directory
+- **Extension Type Accuracy**: Corrected extension description from popup-based to side panel-based
+- **Component Documentation**: Ensured all existing components are properly documented
+
+### Modified
+
+- Updated COMPONENTS.md with Footer component details and corrected structure
+- Updated FEATURES.md to reflect current extension architecture and remove outdated features
+- Enhanced project structure documentation across all files
+
+---
+
 ## [1.0.0] - 2025-10-19
 
 ### Added
