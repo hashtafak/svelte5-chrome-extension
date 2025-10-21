@@ -1,14 +1,12 @@
 <script lang="ts">
-  import { Button, Card, Input, Modal, Badge, Alert } from '../components/ui';
-  import Icon from '../components/Icon.svelte';
-  import { Home, Settings, Check, X, Info } from '../icons';
+  import { Button, Card, Input, Modal, Badge, Alert } from "../components/ui";
 
   let showModal = $state(false);
   let showConfirmDialog = $state(false);
   let showFormDialog = $state(false);
-  let inputValue = $state('');
+  let inputValue = $state("");
   let count = $state(0);
-  let formData = $state({ name: '', email: '' });
+  let formData = $state({ name: "", email: "" });
 </script>
 
 <div class="space-y-8">

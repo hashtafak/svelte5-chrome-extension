@@ -4,10 +4,10 @@
  * Import icons here to keep bundle size minimal and maintain consistency
  */
 
-export { 
-  Home,
+export {
+  House,
   Settings,
-  HelpCircle,
+  CircleQuestionMark,
   Moon,
   Sun,
   Menu,
@@ -18,7 +18,7 @@ export {
   Plus,
   Minus,
   Check,
-  AlertCircle,
+  CircleAlert,
   Info,
   Bell,
   Volume2,
@@ -31,7 +31,7 @@ export {
   Layers,
   Coffee,
   Heart,
-} from '@lucide/svelte';
+} from "@lucide/svelte";
 
 // Re-export types
-export type { Icon } from '@lucide/svelte';
+export type { Icon } from "@lucide/svelte";

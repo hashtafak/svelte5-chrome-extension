@@ -1,34 +1,32 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import { Info, AlertCircle, Check, X } from '../../icons';
-  import Icon from '../Icon.svelte';
-  
+  import type { Snippet } from "svelte";
+  import { Info, CircleAlert, Check, X } from "../../icons";
+  import Icon from "../Icon.svelte";
+
   interface Props {
-    variant?: 'info' | 'success' | 'warning' | 'error';
+    variant?: "info" | "success" | "warning" | "error";
     class?: string;
     showIcon?: boolean;
     children?: Snippet;
   }
-  
+
   let {
-    variant = 'info',
-    class: className = '',
+    variant = "info",
+    class: className = "",
     showIcon = true,
     children,
     ...rest
   }: Props = $props();
-  
-  const classes = $derived([
-    'alert',
-    `alert-${variant}`,
-    className
-  ].filter(Boolean).join(' '));
-  
+
+  const classes = $derived(
+    ["alert", `alert-${variant}`, className].filter(Boolean).join(" ")
+  );
+
   const iconMap = {
     info: Info,
     success: Check,
-    warning: AlertCircle,
-    error: X
+    warning: CircleAlert,
+    error: X,
   };
 </script>
 
